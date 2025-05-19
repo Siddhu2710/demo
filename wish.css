@@ -1,0 +1,121 @@
+body,html{
+    background-color: bisque;
+    height: 100%; /* Ensure the body and html take up the full viewport height */
+    margin: 0; /* Remove default body margins */
+    /*overflow: hidden; /* Prevent the main body from scrolling */
+}
+
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+}
+#whole-container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s ease-in-out forwards;
+    
+}
+
+#wishes-container{
+   background-color: RGB(180, 150, 120);
+   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+   margin: 20px;
+   animation: fadeIn 2s ease-in-out forwards;
+   border-radius: 30px;
+}
+
+#content-container{
+    background-color:RGB(180, 150, 120);
+    margin: 10px;
+    overflow-y: auto;
+    flex-grow: 1;
+    animation: fadeIn 3s ease-in-out forwards;
+    box-shadow: 10px 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+    }
+
+h1{
+    color: bisque;
+}
+
+h2{
+   font-family: 'Courier New', Courier, monospace;
+   color: bisque;
+   text-align: justify;
+}
+
+#next-page-container
+{
+    /* margin: 20px;  
+    width: fit-content;
+    height: fit-content;
+    background-color:  rgb(241, 237, 233); 
+    text-align: center;
+    align-items: center;
+    width: 50%; */
+
+    display: flex;
+    
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    height: fit-content; /* Ensures it takes the full viewport height */
+    /* background-color: RGB(180, 150, 120); */
+    animation: fadeIn 4s ease-in-out forwards;
+    
+        
+}
+
+#wish-text{
+    text-align: center;
+    align-items: center;
+    /* padding: 15px; */
+    margin: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    color: bisque
+    
+}
+
+#next-page-button
+{
+  /* display: grid;
+  background-color:  rgb(199, 142, 72);
+  display: flex;
+  justify-content: center;
+  align-items: center; */
+
+  background-color: #ffe4c4;
+  border-radius: 10px;
+  /* padding: 10px 20px; */
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#next-page-button:hover {
+    background-color: rgb(229, 189, 125);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#error-message{
+    font-size: small;
+    margin-left: 20px;
+}
+
+
+
+/* .para-1{
+    margin-left: 20px;
+    margin-right: 20px; 
+    text-indent: 2em;
+    text-align: justify;
+} */

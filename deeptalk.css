@@ -1,0 +1,40 @@
+*{
+    background-color: rgb(255, 234, 201);
+}
+
+body{
+    /* font-family: 'poppins', sans-serif; */
+    font-weight: 150;
+    height: 100%;
+}
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+#content-space {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+h2{
+    font-family: 'Courier New', Courier, monospace;
+} 
+
+p{
+    font-size: small;
+    text-align: justify;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+#final{
+    font-weight: bold;
+    text-align: center;
+    font-size: xx-small;
+    background-color: saddlebrown;
+    color: wheat;
+    font-family: 'Courier New', Courier, monospace;
+}

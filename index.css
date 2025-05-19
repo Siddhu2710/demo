@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400&family=Franklin+Gothic+Medium&display=swap');
+
+body {
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    place-items: center; /* Centers both horizontally and vertically */
+    height: 100vh;
+    margin: 0;
+    background-image: url(login-bg.png);
+    background-position: center;
+    background-size: cover;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes fadeOutMessage {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.hidden-message {
+    animation: fadeOutMessage 4s ease-in-out forwards;
+    pointer-events: none; /* Prevent interaction during fade */
+}
+
+@keyframes fadeOutForm {
+    0% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+}
+
+.hidden-form {
+    animation: fadeOutForm 4s ease-in-out forwards;
+    pointer-events: none;
+}
+
+.hidden {
+    animation: fadeOut 4s ease-in-out forwards;
+    pointer-events: none; /* Prevent interaction during fade */
+}
+
+
+@media (max-width: 800px) {
+    body {
+        background-image: url(login-bg-mobile.png);
+        display: flex;  
+        justify-content: center;  
+        align-items: center;
+        min-height: 100vh;  
+        margin: 0;
+    }
+
+    #whole-login-form {
+        
+        backdrop-filter: blur(25px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #000000;
+        width: 400px;
+        max-width: 400px;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 50px; /* Override previous margin-left */
+    }
+}
+
+#whole-login-form{
+    background-color: transparent;
+    display: flex;
+    flex-direction: column; /* Ensures elements are stacked */
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 500px; /* Adjusted to match centered-div */
+    height: 200px; /* Ensures it occupies correct space */
+    padding: 2px;
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 4s ease-in-out forwards;
+ 
+}
+
+
+#password-desc{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 1000;
+}
+
+#password{
+    border:none;
+    background: transparent;
+    border-bottom: 1px solid rgb(0, 0, 0); 
+}
+
+#password::placeholder {
+    color: black; /* Ensures placeholder text appears black */
+    opacity: 1; /* Makes sure it is fully visible */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#togglePassword{
+    border: none;
+    background: transparent;
+    
+}
+
+#centered-div {
+    width: 300px;
+    height: 500px;
+    /* background: gray; */
+    text-align: center;
+    padding: 20px;
+}
+
+.ion-icon {
+   border: none;
+   background-color: transparent;
+}
+
+
+
+#password-check-button{
+    background-color:rgb(255, 234, 201);
+    width: 200px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#password-check-button:hover {
+    background-color:rgb(229, 189, 125);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+   
+}
+
+
+#message {
+    color: rgb(11, 7, 7);
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide the overflowing text */   
+    animation: fadeIn 2s ease-in-out forwards; /* Adjust duration */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+@keyframes reveal-text {
+    to {
+        width: 100%; /* Or the actual width of your text */
+    }
+}
