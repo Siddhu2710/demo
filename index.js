@@ -82,13 +82,15 @@ document.getElementById("password-check-button").addEventListener("click", funct
     const loginForm = document.getElementById("whole-login-form");
 
     if (password === confirm_password) {
+        // **✅ Store authentication flag**
+        sessionStorage.setItem("authenticated", "true");
+
         // Display success message
         message.textContent = "Hi Anjali!!";
         message.style.opacity = "1"; 
-        message.style.fontFamily = "Courier New', Courier, monospace"
+        message.style.fontFamily = "Courier New', Courier, monospace";
         message.style.transition = "opacity 2s ease-in-out";
 
-        // Wait 2 seconds before fading out the message
         setTimeout(function() {
             message.style.opacity = "0";
         }, 2000);
@@ -96,20 +98,19 @@ document.getElementById("password-check-button").addEventListener("click", funct
         let screenWidth = window.innerWidth;
 
         if (screenWidth < 800) {
-            // Fade out login form in 4 seconds
             setTimeout(function() {
                 loginForm.style.transition = "opacity 4s ease-in-out";
                 loginForm.style.opacity = "0";
-            }, 2000); // Start fading the form after message begins to fade
+            }, 2000);
 
             setTimeout(function() {
-                loginForm.style.display = "none"; // Hide form after fade-out
+                loginForm.style.display = "none";
                 body.style.backgroundImage = "url('login-success-mobile.png')";
 
                 setTimeout(function() {
                     location.assign("wish.html");
-                }, 2000); // Redirect after 2 seconds
-            }, 3000); // After form fade-out completion
+                }, 2000);
+            }, 3000);
 
         } else {
             setTimeout(function() {
@@ -117,15 +118,13 @@ document.getElementById("password-check-button").addEventListener("click", funct
                 setTimeout(function() {
                     location.assign("wish.html");
                 }, 2000);
-            }, 2000); // Show success image after the message fades
+            }, 2000);
         }
 
     } else {
         message.textContent = "Yaaru saamy nee?";
     }
 });
-
-
 function togglePassword() {
     var passwordInput = document.getElementById("password");
     var eyeIcon = document.getElementById("eyeIcon");
