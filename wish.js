@@ -1,3 +1,10 @@
+window.onload = function () {
+    // Check if sessionStorage has the authentication flag
+    if (sessionStorage.getItem("authenticated") !== "true") {
+        window.location.href = "index.html"; // Redirect to login page if not authenticated
+    }
+};
+
 function displayBirthdayMessage() {
     const today = new Date();
     const birthday = new Date(today.getFullYear(), 5, 2); // Month is 0-indexed (0 for January, 5 for June)
